@@ -1,18 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Login from "./Components/Auth/Login";
 import EmployeeDashboard from "./Components/Auth/Dashboard/EmployeeDashboard";
 import Header from "./Components/Others/Header";
 import AdminDashboard from "./Components/Auth/Dashboard/AdminDashboard";
+import { getLocalStorage, setLocalStorage } from "./Utils/LocalStorage";
 
 function App() {
-  const [count, setCount] = useState(0);
+  useEffect(() => {
+    //setLocalStorage();
+    getLocalStorage();
+  });
+
 
   return (
     <>
-      {/* <Login /> */}
+      <Login />
 
       {/* <EmployeeDashboard /> */}
-      <AdminDashboard />
+      {/* <AdminDashboard /> */}
     </>
   );
 }
