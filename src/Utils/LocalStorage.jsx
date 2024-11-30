@@ -166,45 +166,19 @@ const employees = [
 
 const admin = [
   {
-    admin: {
-      id: "A001",
-      email: "admin@example.com",
-      password: "123",
-      tasks: [
-        {
-          task_title: "Review Reports",
-          task_description:
-            "Review and approve the monthly performance reports.",
-          task_date: "2024-12-01",
-          category: "Management",
-          active: true,
-          new_task: true,
-          completed: false,
-          failed: false,
-        },
-        {
-          task_title: "Team Meeting",
-          task_description: "Organize and lead the monthly team meeting.",
-          task_date: "2024-12-02",
-          category: "Meeting",
-          active: true,
-          new_task: true,
-          completed: false,
-          failed: false,
-        },
-      ],
-    },
+    id: 1,
+    email: "admin@example.com",
+    password: "123",
   },
 ];
+
 export const setLocalStorage = () => {
   localStorage.setItem("employees", JSON.stringify(employees));
-  localStorage.setItem("employees", JSON.stringify(admin));
+  localStorage.setItem("admin", JSON.stringify(admin));
 };
 export const getLocalStorage = () => {
   const employees = JSON.parse(localStorage.getItem("employees"));
-  const admin = JSON.parse(localStorage.getItem("employees"));
-  console.log(employees);
-  console.log(admin);
-  
- 
+  const admin = JSON.parse(localStorage.getItem("admin"));
+
+  return { employees, admin };
 };
